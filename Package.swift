@@ -9,7 +9,6 @@ let package = Package(
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
             name: "CocoaAsyncSocket",
-            type: .static,
             targets: ["CocoaAsyncSocket"]),
     ],
     dependencies: [
@@ -22,6 +21,8 @@ let package = Package(
         .target(
             name: "CocoaAsyncSocket",
             dependencies: [],
-            publicHeadersPath: "./")
+            publicHeadersPath: "./",
+            linkerSettings: [.linkedLibrary("Security"), .linkedLibrary("CFNetwork")]
+            )
     ]
 )
