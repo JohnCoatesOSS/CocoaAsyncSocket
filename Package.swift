@@ -22,7 +22,7 @@ let package = Package(
             name: "CocoaAsyncSocket",
             dependencies: [],
             publicHeadersPath: "./",
-            linkerSettings: [.linkedLibrary("Security"), .linkedLibrary("CFNetwork")]
+            linkerSettings: [.linkedFramework("Security"), .linkedFramework("CFNetwork")]
             )
     ]
 )
